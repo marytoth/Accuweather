@@ -27,8 +27,15 @@
             (datos.main.feels_like - 273.15).toFixed(1) + "ºC"; //sensacion termica
           document.getElementById("humidity").innerHTML =
             datos.main.humidity + "%"; //la pinshi humedad
-        })
-        .catch((error) => alert("Hubo un error: " + error));
+        });
+
+           } else {
+         console.log('Respuesta de red OK pero respuesta HTTP no OK');
+       }); 
+
+        .catch((error){ 
+          console.log('Hubo un problema con la petición Fetch:' + error.message);
+      }); 
     </script>
   </head>
   <body>
